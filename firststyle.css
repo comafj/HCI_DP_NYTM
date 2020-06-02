@@ -1,0 +1,65 @@
+body {
+    background-color: #eee;
+}
+h1{
+    padding-left : 50px;
+}
+#container{
+    display:flex;
+}
+#logo{
+    display:flex;
+    float:left;
+    width:15%;
+    align-items:center;
+    justify-content:center;
+}
+#search{
+    display:flex;
+    float:left;
+    width:65%;
+    align-items:center;
+    justify-content:center;
+}
+#login{
+    display:flex;
+    float:right;
+    width:20%;
+    align-items:center;
+    justify-content:center;
+}
+#input_query{
+    margin:5px;
+    width:70%;
+    font-size:25px;
+}
+#CBTN{
+    margin:5px;
+    font-size:25px;
+}
+#LOGBTN{
+    font-size:25px;
+}
+#contents{
+   display:flex;
+    margin : 10px;
+    border : solid 5px;
+}
+#Lcontent{
+    display:flex;
+    float:left;
+    width:20%;
+    align-items:center;
+    justify-content:center;
+    border : solid 5px red;
+    margin : 10px;
+}
+#Rcontent{
+    display:flex;
+    float:left;
+    width:80%;
+    align-items:center;
+    justify-content:center;
+    border : solid 5px blue;
+    margin : 10px;
+}

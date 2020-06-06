@@ -1,11 +1,15 @@
-body {
+html, body {
     background-color: #eee;
+    height: 100%;
+    width: 100%;
 }
 h1{
     padding-left : 50px;
 }
 #container{
     display:flex;
+    width : 80%;
+    margin : 0 auto;
 }
 #logo{
     display:flex;
@@ -22,11 +26,15 @@ h1{
     justify-content:center;
 }
 #login{
-    display:flex;
+    display:block;
     float:right;
-    width:20%;
+    width:25%;
     align-items:center;
     justify-content:center;
+}
+.LogoutSubmit{
+    display:block;
+    width: 100%;
 }
 #input_query{
     margin:5px;
@@ -42,24 +50,127 @@ h1{
 }
 #contents{
    display:flex;
-    margin : 10px;
+    margin : 0 auto;
     border : solid 5px;
+    height : 80%;
+    width : 80%;
+
 }
 #Lcontent{
-    display:flex;
     float:left;
     width:20%;
     align-items:center;
     justify-content:center;
     border : solid 5px red;
     margin : 10px;
+    height : 95%;
+}
+#MyChannel{
+    display:flex;
+    width:90%;
+    /* align-items:center; */
+    text-align: center;
+    justify-content:center;
+    border : solid 5px black;
+    margin : 0 auto;
+    height : 35%;
+    position: relative;
+    vertical-align: text-top;
+    top: 0%;
+}
+.PreviewLeftBtn{
+    /* border : solid 1px black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:10%;
+    height : 40%;
+    position: absolute;
+    top: 30%;
+    left: 0%;
+}
+.Preview{
+    display: flex;
+    border : solid 1px black;
+    width:80%;
+    height : 60%;
+    position: absolute;
+    top: 20%;
+    margin : auto;
+}
+.PreviewRightBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:10%;
+    height : 40%;
+    position: absolute;
+    top: 30%;
+    right: 0%;
+}
+#MyChannelPreviewCreateBtn{
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 3%;
+    font-size: 1.5em;
+    height:20%;
+}
+#JoinedChannel{
+    display:flex;
+    width:90%;
+    justify-content:center;
+    border : solid 5px black;
+    margin : 0 auto;
+    height : 35%;
+    position: relative;
+    top: 5%;
+}
+#CommunityBtnArea{
+    display:flex;
+    width:90%;
+    align-items:center;
+    justify-content:center;
+    border : solid 5px black;
+    margin : 0 auto;
+    height : 10%;
+    position: relative;
+    top: 10%;
+}
+#CommunityBtn{
+    font-size:100%;
 }
 #Rcontent{
-    display:flex;
-    float:left;
+    text-align:center;
     width:80%;
-    align-items:center;
     justify-content:center;
     border : solid 5px blue;
     margin : 10px;
+}
+.RecommendedChannel{
+    /* position: absolute; */
+    float:left;
+    text-align:center;
+    display: inline;
+    border : solid 1px black;
+    width:30%;
+    height:85%;
+    margin: 5% 1.5% 0% 1.5%;
+    margin-top: 5%;
+    
+}
+#RecommendedChannelTitle{
+    position: absolute;
+    display: inline-block;
+    width:90%;
+    justify-content:center;
+    border : solid 5px black;
+    margin : 0 auto;
+    height : 10%;
+    position: relative;
+    top: 5%;
+}
+.RecommendedChannelPreview{
+    width:100%;
 }

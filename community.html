@@ -6,12 +6,18 @@
     <link href="community.css" rel="stylesheet" />
 </head>
 <body>
-<table id="community_table">
-    <tr>
-        <td><textarea id="comment" rows="8" cols="93" placeholder="Write anything! Post your thoughts, share awesome videos, and find your dance mates!"></textarea></td>
-        <td><button id="post">Post</button></td>
-    </tr>
-</table>
+<h2>Community</h2>
+<small>Post your thoughts, share awesome videos, and find your dance mates!</small><br><br>
+<div id="community">
+    Title <input type="text" id="title"><br>
+    Tag <input type="text" id="tag" placeholder="Tag link of the video you want to share if you want!"><br><br>
+    <textarea id="comment" rows="10" cols="100" placeholder="Write anything!"></textarea><br>
+    <button id="post">Post</button>
+</div>
+<table id="community_table"></table>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 <script src="community.js"></script>
 </body>

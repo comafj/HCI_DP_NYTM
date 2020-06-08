@@ -8,7 +8,9 @@ $( document ).ready(function() {
   };
   var communityBtn = document.getElementById("CommunityBtn");
   communityBtn.onclick = function(){
-    location.href="community.html";
+    // location.href="community.html";
+    var Rcontent = document.getElementById("RContentFrame");
+    Rcontent.src = "community.html";
   };  
   var createBtn = document.getElementById("MyChannelPreviewCreateBtn");
   createBtn.onclick = function(){

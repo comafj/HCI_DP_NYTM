@@ -1,0 +1,19 @@
+body {
+    background-color: #eee;
+    padding : 10px 10px 10px 10px;
+}
+#CreateChannelTitle{
+    /* margin : 10px 10px 10px 10px; */
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #230a59;
+}
+#CreateChannelFrom{
+    margin : 10px 10px 10px 10px;
+}
+[class*="btn-"] .focus {
+    box-shadow: none
+}
+#CreateChannelSubmit{
+    border : solid 5px;
+}

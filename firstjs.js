@@ -42,8 +42,16 @@ $( document ).ready(function() {
     id = inputId.value;
     username = id;
     // loginform.parentNode.removeChild(loginform);
-    $("#login").html(`<h4 style="display:block;width=100%;">Hello, ${username}</h4>
-    <button type="submit" id="LogoutBtn" class="btn btn-primary pull-right LogoutSubmit">Log out</button>`);
+    // $("#login").html(`<div><h4 style="display:block;width=100%;">Hello, ${username}</h4></div><br>
+    // <div><button type="submit" id="LogoutBtn" class="btn btn-primary LogoutSubmit" style="display:block;width=100%;">Log out</button></div>`);
+    $("#login").html(`<form id="login-form" class='form-horizontal container'>
+    <div class="form-row">
+      <h5 style="display:block;width=100%;">Hello, ${username}</h5>
+    </div>
+    <div class="form-row col-sm-12">
+      <button type="submit" id="LogoutBtn" class="btn btn-primary pull-right LogoutSubmit">Log out</button>
+    </div>
+  </form>`);
     var logoutBtn = document.getElementById("LogoutBtn");
     logoutBtn.onclick = function(){
       $("#login").html(`<form id="login-form" class='form-horizontal'>
@@ -70,8 +78,16 @@ function login(){
   id = inputId.value;
   username = id;
   // loginform.parentNode.removeChild(loginform);
-  $("#login").html(`<h4 style="display:block;width=100%;">Hello, ${username}</h4>
-  <button type="submit" id="LogoutBtn" class="btn btn-primary pull-right LogoutSubmit">Log out</button>`);
+  // $("#login").append(`<h4 style="display:block;width=100%;">Hello, ${username}</h4>
+  // <button type="submit" id="LogoutBtn" class="btn btn-primary pull-right LogoutSubmit">Log out</button>`);
+  $("#login").append(`<form id="login-form" class='form-horizontal container'>
+  <div class="form-row">
+    <h4 style="display:block;width=100%;">Hello, ${username}</h4>
+  </div>
+  <div class="form-row col-sm-12">
+    <button type="submit" id="LogoutBtn" class="btn btn-primary pull-right LogoutSubmit">Log out</button>
+  </div>
+</form>`);
   var logoutBtn = document.getElementById("LogoutBtn");
   logoutBtn.onclick = function(){
     $("#login").html(`<form id="login-form" class='form-horizontal'>
@@ -89,10 +105,27 @@ function login(){
 }
 
 function showMyChannelPreview() {
-  var channelList = user_info['admin']['MyChannel'];
-  var preview = document.getElementById("MyChannelPreview");
-  preview.src = channelList[0]['url'];
-  preview.value = 0;
+  // var channelList = user_info['admin']['MyChannel'];
+  // var preview = document.getElementById("MyChannelPreview");
+  // preview.src = channelList[0]['url'];
+  // preview.value = 0;
+
+  var carousel = document.getElementById("MyChannelCarousel");
+  carousel.innerHTML = '';
+  var numRows = user_info['admin']['MyChannel'].length;
+  for(var i=0;i<numRows;i++){
+    var node = document.createElement("div");
+    if (i == 0){
+      node.className = "carousel-item active"
+    }else{
+      node.className = "carousel-item"
+    }
+    var img = document.createElement("img");
+    img.className = "d-block w-100";
+    img.src = user_info['admin']['MyChannel'][i]['url'];
+    node.appendChild(img);
+    carousel.appendChild(node);
+  }  
 }
 
 $('#MyChannelPreviewLeftBtn').on('click', function () {
@@ -110,10 +143,27 @@ $('#MyChannelPreviewRightBtn').on('click', function () {
 })
 
 function showJoinedChannelPreview() {
-  var channelList = user_info['admin']['JoinedChannel'];
-  var preview = document.getElementById("JoinedChannelPreview");
-  preview.src = channelList[0]['url'];
-  preview.value = 0;
+  // var channelList = user_info['admin']['JoinedChannel'];
+  // var preview = document.getElementById("JoinedChannelPreview");
+  // preview.src = channelList[0]['url'];
+  // preview.value = 0;
+
+  var carousel = document.getElementById("JoinedChannelCarousel");
+  carousel.innerHTML = '';
+  var numRows = user_info['admin']['JoinedChannel'].length;
+  for(var i=0;i<numRows;i++){
+    var node = document.createElement("div");
+    if (i == 0){
+      node.className = "carousel-item active"
+    }else{
+      node.className = "carousel-item"
+    }
+    var img = document.createElement("img");
+    img.className = "img-fluid";
+    img.src = user_info['admin']['JoinedChannel'][i]['url'];
+    node.appendChild(img);
+    carousel.appendChild(node);
+  }
 }
 
 $('#JoinedChannelPreviewLeftBtn').on('click', function () {

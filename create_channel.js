@@ -18,41 +18,22 @@ $( document ).ready(function() {
                                inputSong: inputSong.value,
                                inputSinger: inputSinger.value}, "*");
   };
-  var json = $('#json');
-  var form = $('#CreateChannelForm');
-  var group = $('.form-group inputChannelName'); // specify which group u d like to serialize;
-  var submit = $('button[type="submit"]');
-  form.submit(function(e){
-    e.preventDefault(); // prevebt form submition if u done ur work remove this line;
-    var user = group.serializeArray();
-    var loginFormObject = {};
-    for (var i = user.length - 1; i >= 0; i--) {
-      var name = user[i].name;
-      var value = user[i].value;
-      loginFormObject[name] = value;
-    }
-    loginFormObject = JSON.stringify(loginFormObject);
-    console.log(loginFormObject);
-    json.text(loginFormObject);
-  });
 });
-// (function(window, document, undefined){
 
-//   // code that should be taken care of right away
-  
-//   window.onload = init;
-  
-//     function init(){
-//       // the code to be called when the dom has loaded
-//       // #document has its nodes
-//       var btn = document.getElementById("CreateChannelSubmit");
-//       var inputChannelName = document.getElementById("inputChannelName");
-//       var inputLink = document.getElementById("inputLink");
-//       var inputSong = document.getElementById("inputSong");
-//       var inputSinger = document.getElementById("inputSinger");
-//       btn.onclick = function(){
-//         window.parent.postMessage({inputChannelName: inputChannelName.nodeValue}, '*');
-//       };
-//     }
-  
-//   })(window, document, undefined);
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();

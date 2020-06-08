@@ -4,7 +4,34 @@ var username = "admin"
 $( document ).ready(function() {
   var btn = document.getElementById("CBTN");
   btn.onclick = function(){
-    location.href="second.html";
+    var option_val = $("#select_option option:selected").val();
+    var input_var = document.getElementById("input_query");
+    input_var.value="";
+
+    if(option_val=="all"){
+      var Rcontent = document.getElementById("RContentFrame");
+      Rcontent.src = "./search frame/newsearch/all.html";
+    }
+    else if(option_val=="channel"){
+      var Rcontent = document.getElementById("RContentFrame");
+      Rcontent.src = "./search frame/newsearch/channel.html";
+    }
+    else if(option_val=="song"){
+      var Rcontent = document.getElementById("RContentFrame");
+      Rcontent.src = "./search frame/newsearch/song.html";
+    }
+    else if(option_val=="singer"){
+      var Rcontent = document.getElementById("RContentFrame");
+      Rcontent.src = "./search frame/newsearch/singer.html";
+    }
+    else if(option_val=="creator"){
+      var Rcontent = document.getElementById("RContentFrame");
+      Rcontent.src = "./search frame/newsearch/creator.html";
+    }
+    else{
+      var Rcontent = document.getElementById("RContentFrame");
+      Rcontent.src = "./search frame/newsearch/all.html";
+    }
   };
   var communityBtn = document.getElementById("CommunityBtn");
   communityBtn.onclick = function(){
@@ -32,6 +59,7 @@ $( document ).ready(function() {
     showMyChannelPreview();
     var Rcontent = document.getElementById("RContentFrame");
     Rcontent.src = "./recommended_channel.html";
+    console.log("AAA");
   });
   var loginBtn = document.getElementById("LoginBtn");
   LoginBtn.onclick = function(){

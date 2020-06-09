@@ -18,7 +18,7 @@ h1{
     float:center;
     text-align: center;
     align-items: center;
-    width:50%;
+    width:100%;
     align-items:center;
     justify-content:center;
     vertical-align: middle;
@@ -75,6 +75,10 @@ h1{
 #CBTN{
     margin:5px;
     font-size:25px;
+    height: 50%;
+    border: solid 5px;
+    border-radius: 5px;
+    line-height: 100%;
 }
 #LOGBTN{
     font-size:25px;

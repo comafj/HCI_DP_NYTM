@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NYTM</title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- 부가적인 테마 -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"> -->
+
+    <link href="../jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="./channel.css" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nanum Brush Script">
+  </head>
+  <body>
+    <div id="container">
+      <div id="logoDiv" class="col-3">
+        <button id="logo">
+          <img src="../logo_image2.png" class="img-fluid" style="width: 85%;"><img>
+          <!-- <img src="./logo_image.png" class="img-fluid" style="width: 70%;"><img> -->
+        </button>
+      </div>
+
+      <div id="search" class="col-9">
+        <h1>Let's dance with BTS!</h1>
+      </div>
+    </div>
+
+    <div id = "contents">
+      <div id = "Lcontent">
+        <div id = "ChatRoom">
+          <span id = "PreviewTitle">Chat</span>
+          <div id="ChatRoomContents">
+            <div id="ChatText"><p>Hello!</p><span id="ChatName">Mary</span></div>
+            <div id="MyChatText"><p>Hello!</p><span id="ChatName">You</span></div>
+          </div>
+          <div>          
+            <input id="ChatInput" type="text" name="query" class="col-9" placeholder="Chat!" autofocus onkeyup="enterkey();">
+            <button id = "ChatBtn" type="button" class = "col-2 btn btn-outline-primary btn-sm PreviewCreateBtn"><svg class="bi bi-arrow-return-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M10.146 5.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 9l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+              <path fill-rule="evenodd" d="M3 2.5a.5.5 0 0 0-.5.5v4A2.5 2.5 0 0 0 5 9.5h8.5a.5.5 0 0 0 0-1H5A1.5 1.5 0 0 1 3.5 7V3a.5.5 0 0 0-.5-.5z"/>
+            </svg></button>
+          </div>
+        </div>
+      </div>
+      <div id = "Rcontent">
+        <div id = "DanceVideo">
+          <iframe style="display:block; width:100%; height: 100%;"
+            src="https://www.youtube.com/embed/H_qkMHGmSq4?mute=1&enablejsapi=1">
+          </iframe>
+        </div>
+        <div id = "VideoComments">
+          <div id = "VideoComment">
+            <div id = "VideoCommentVideo">
+              <iframe style="display:block; width:100%; height: 100%;" allow="autoplay; encrypted-media"
+                src="https://www.youtube.com/embed/G-0nHNpsfV8?start=30&autoplay=1&mute=1&enablejsapi=1">
+              </iframe>
+            </div>
+            <div id = "VideoCommentText"><p id="TimeLink">0:30</p><p>Am I doing right?</p></div>
+          </div>
+          <div id = "VideoComment">
+            <div id = "VideoCommentVideo">
+              <iframe style="display:block; width:100%; height: 100%;" allow="autoplay; encrypted-media"
+                src="https://www.youtube.com/embed/HJmvo3iBs2M?start=73&autoplay=1&mute=1&enablejsapi=1">
+              </iframe>
+            </div>
+            <div id = "VideoCommentText"><p id="TimeLink">1:13</p><p>Follow me! It will be better.</p></div>
+          </div>
+          <div id = "VideoComment">
+            <div id = "VideoCommentVideo">
+              <iframe style="display:block; width:100%; height: 100%;" allow="autoplay; encrypted-media"
+                src="https://www.youtube.com/embed/pTvaU4P8s-8?start=122&autoplay=1&mute=1&enablejsapi=1">
+              </iframe>
+            </div>
+            <div id = "VideoCommentText"><p id="TimeLink">2:02</p><p>Check my movement, please :)</p></div>
+          </div>
+        </div>
+        <div id = "VideoCommentInput">
+          <svg class="bi bi-camera-video-fill" width="7em" height="7em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+            <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+          </svg>
+          <input id="VideoCommentInputText" type="text" name="query" class="col-9" placeholder="Chat!">
+          <button id="VideoCommentInputBtn" type="button" class = "col-2 btn btn-outline-primary btn-sm PreviewCreateBtn"><svg class="bi bi-arrow-return-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.146 5.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 9l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
+            <path fill-rule="evenodd" d="M3 2.5a.5.5 0 0 0-.5.5v4A2.5 2.5 0 0 0 5 9.5h8.5a.5.5 0 0 0 0-1H5A1.5 1.5 0 0 1 3.5 7V3a.5.5 0 0 0-.5-.5z"/>
+          </svg></button>
+        </div>
+      </div>
+    </div>
+     
+    <script src="../jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="../jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="./channel.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

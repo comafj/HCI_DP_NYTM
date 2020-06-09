@@ -1,0 +1,243 @@
+html, body {
+    background-color: #eee;
+    height: 100%;
+    width: 100%;
+}
+h1{
+    /* padding-left : 50px; */
+}
+#container{
+    display:flex;
+    width : 80%;
+    margin : 0 auto;
+    padding:0 0 0 0;
+    vertical-align: middle;
+    height: 15%;
+}
+#logo{
+    display:flex;
+    float:center;
+    text-align: center;
+    align-items: center;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+    vertical-align: middle;
+    margin: 5px auto;
+    border: None;
+}
+#logoDiv{
+    display:flex;
+    float:left;
+    align-items:center;
+    justify-content:center;
+    
+    margin: 5px auto;
+}
+#search{
+    display:flex;
+    float:left;
+    /* width:65%; */
+    width:100%;
+    align-items:center;
+    justify-content:center;
+}
+
+#contents{
+   display:flex;
+    margin : 0 auto;
+    height : 80%;
+    width : 80%;
+    border : solid 5px gray;
+    border-radius: 15px;
+    margin-bottom:10px;
+
+}
+#Lcontent{
+    float:left;
+    width:25%;
+    align-items:center;
+    justify-content:center;
+    /* border : solid 5px red; */
+    margin : 4px;
+    height : 95%;
+}
+#PreviewTitle{
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #230a59;
+}
+#ChatRoom{
+    display:flex;
+    width:100%;
+    /* align-items:center; */
+    text-align: center;
+    justify-content:center;
+    border : solid 5px gray;
+    border-radius: 15px;
+    margin-bottom:10px;
+    margin : 0 auto;
+    height : 103%;
+    position: relative;
+    vertical-align: text-top;
+    top: 0%;
+}
+#ChatRoomContents{
+    /* display: flex;
+    flex-direction: column; */
+    flex-grow: 0;
+    border : solid 1px black;
+    width:95%;
+    height : 80%;
+    position: absolute;
+    top: 7%;
+    margin : auto;
+    background-color: white;
+    overflow:auto;
+}
+#ChatName{
+    float: right;
+    font-size: 0.5em;
+    text-align: right;
+}
+#ChatTextText{
+    margin: 0 0 0 0;
+}
+#ChatText{
+    display: block;
+    float: left;
+    width : 80%;
+    text-align: left;
+    word-break: break-all;
+    border : solid 0px;
+    border-radius: 8px;
+    height: auto;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    vertical-align: middle;
+    background-color: #eee;
+    margin : 5px 5px 5px 5px;
+    padding : 5px 10px 5px 10px;
+}
+#MyChatText{
+    float: right;
+    width : 80%;
+    text-align: left;
+    word-break: break-all;
+    border : solid 0px;
+    border-radius: 8px;
+    height: auto;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    background-color: #3238fe;
+    color: white;
+    margin : 5px 5px 5px 5px;
+    padding : 5px 10px 5px 10px;
+}
+#ChatBtn{
+    position: absolute;
+    bottom: 1.5%;
+    right: 2%;
+    border : solid 3px;
+    border-radius: 8px;
+    font-weight:bold;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    width: 100%;
+    height:10%;
+    line-height: 100%;
+    font-size: 1.5em;
+}
+#ChatInput{
+    position: absolute;
+    bottom: 1.5%;
+    left: 2%;
+    border : solid 3px;
+    border-radius: 8px;
+    font-weight:bold;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    width: 100%;
+    height:10%;
+    font-size: 1.5em;
+}
+#RContentFrame{
+    border: None;
+}
+#Rcontent{
+    display: block;
+    text-align:center;
+    width:75%;
+    justify-content:center;
+}
+#DanceVideo{
+    justify-content:center;
+    border : solid 5px gray;
+    border-radius: 15px;
+    margin : 4px;
+    padding: 4px;
+    height: 70%;
+}
+#VideoComments{
+    border : solid 5px gray;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    bottom: 10%;
+    margin : 4px;
+    padding: 4px;
+    height: 27.5%;
+    width: 70%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    float:left;
+}
+#VideoComment{
+    display: inline-block;
+    border : solid 0px;
+    border-radius: 8px;
+    background-color:  white;
+    width: 50%;
+    bottom: 10%;
+    margin : 0px auto;
+    height: 100%;
+}
+#VideoCommentVideo{
+    display: inline-block;
+    border : solid 0px gray;
+    width: 65%;
+    margin : 0px auto;
+    height: 100%;
+}
+#VideoCommentText{
+    display: inline-block;
+    vertical-align: top;
+
+    margin : 0 auto;
+    padding: 5px 5px 5px 5px;
+    width: 30%;
+    max-width: 30%;
+    height: 100%;
+    text-align: left;
+    word-break: break-word;
+    white-space: normal;
+    border : solid 0px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    color: black;
+}
+#TimeLink{
+    color: #230a59;
+    text-decoration: underline;
+}
+#VideoCommentInput{
+    display: inline-block;
+    border : solid 5px gray;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    bottom: 10%;
+    margin : 4px;
+    padding: 4px;
+    height: 27.5%;
+    width: 27%;
+}

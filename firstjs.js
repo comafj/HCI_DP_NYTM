@@ -64,6 +64,11 @@ $( document ).ready(function() {
     InputQuery.value = "";
   };  
   window.addEventListener('message', function(e) {
+    if(message='Channel1'){
+      location.href="channels/channel.html";
+      return;
+    }
+
     console.log(e.data);
     var uid = e.data['inputLink'].split("=").slice(-1)[0];
     var url = "https://img.youtube.com/vi/".concat(uid).concat("/0.jpg");

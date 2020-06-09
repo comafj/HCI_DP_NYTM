@@ -1,0 +1,92 @@
+body {
+    background-color: #eee;
+}
+h1{
+    padding-left : 50px;
+}
+#container{
+    display:flex;
+}
+#logo{
+    display:flex;
+    float:left;
+    width:15%;
+    align-items:center;
+    justify-content:center;
+}
+#search{
+    display:flex;
+    float:left;
+    width:65%;
+    align-items:center;
+    justify-content:center;
+}
+#login{
+    display:flex;
+    float:right;
+    width:20%;
+    align-items:center;
+    justify-content:center;
+}
+#input_query{
+    margin:10px;
+    width:70%;
+    font-size:25px;
+}
+#select_option{
+    font-size:20px;
+    height:35px;
+}
+#CBTN{
+    margin:5px;
+    font-size:25px;
+}
+#LOGBTN{
+    font-size:25px;
+}
+#contents{
+   display:flex;
+    margin : 10px;
+    border : solid 5px;
+}
+#Lcontent{
+    display:flex;
+    float:left;
+    width:20%;
+    align-items:center;
+    justify-content:center;
+    border : solid 5px red;
+    margin : 10px;
+}
+#Rcontent{
+    width:100%;
+}
+
+.Rsingle{
+  display:flex;
+  border : solid 5px gray;
+  border-radius: 15px;
+  margin-top:10px;
+  margin-bottom:10px;
+  cursor: pointer;
+}
+.left_image{
+  margin: 5px;
+  max-height: 200px;
+  width : auto;
+  display:block;
+}
+.text{
+  margin: 5px;
+  display:block;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+.Cname{
+  font-weight:bold;
+  font-size:23px;
+}
+.Cinfo{
+  margin-top:5px;
+  font-size:13px;
+}

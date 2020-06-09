@@ -6,31 +6,43 @@ $( document ).ready(function() {
   btn.onclick = function(){
     var option_val = $("#select_option option:selected").val();
     var input_var = document.getElementById("input_query");
-    input_var.value="";
+    // input_var.value="";
 
     if(option_val=="all"){
       var Rcontent = document.getElementById("RContentFrame");
       Rcontent.src = "./search frame/newsearch/all.html";
+      var InputQuery = document.getElementById("input_query");
+      InputQuery.value = "COMAFJ";
     }
     else if(option_val=="channel"){
       var Rcontent = document.getElementById("RContentFrame");
       Rcontent.src = "./search frame/newsearch/channel.html";
+      var InputQuery = document.getElementById("input_query");
+      InputQuery.value = "beginner";
     }
     else if(option_val=="song"){
       var Rcontent = document.getElementById("RContentFrame");
       Rcontent.src = "./search frame/newsearch/song.html";
+      var InputQuery = document.getElementById("input_query");
+      InputQuery.value = "oh";
     }
     else if(option_val=="singer"){
       var Rcontent = document.getElementById("RContentFrame");
       Rcontent.src = "./search frame/newsearch/singer.html";
+      var InputQuery = document.getElementById("input_query");
+      InputQuery.value = "BTS";
     }
     else if(option_val=="creator"){
       var Rcontent = document.getElementById("RContentFrame");
       Rcontent.src = "./search frame/newsearch/creator.html";
+      var InputQuery = document.getElementById("input_query");
+      InputQuery.value = "COMAFJ";
     }
     else{
       var Rcontent = document.getElementById("RContentFrame");
       Rcontent.src = "./search frame/newsearch/all.html";
+      var InputQuery = document.getElementById("input_query");
+      InputQuery.value = "COMAFJ";
     }
   };
   var communityBtn = document.getElementById("CommunityBtn");
@@ -48,6 +60,8 @@ $( document ).ready(function() {
   logoBtn.onclick = function(){
     var Rcontent = document.getElementById("RContentFrame");
     Rcontent.src = "./recommended_channel.html";
+    var InputQuery = document.getElementById("input_query");
+    InputQuery.value = "";
   };  
   window.addEventListener('message', function(e) {
     console.log(e.data);

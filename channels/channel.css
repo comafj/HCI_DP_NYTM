@@ -42,7 +42,14 @@ h1{
     align-items:center;
     justify-content:center;
 }
-
+#Non-Live{
+    float:right;
+    color: #829fd9;
+    border : solid 5px #829fd9;
+    border-radius: 15px;
+    font-size: 1.5em;
+    padding: 2px 2px 2px 2px;
+}
 #contents{
    display:flex;
     margin : 0 auto;

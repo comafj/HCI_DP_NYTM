@@ -14,9 +14,11 @@ $( document ).ready(function() {
     window.parent.postMessage({Live: $('input[name=Live]:checked').val(),
                                Private: $('input[name=Private]:checked').val(),
                                inputChannelName: inputChannelName.value,
+                               title: inputChannelName.value,
                                inputLink: inputLink.value,
                                inputSong: inputSong.value,
-                               inputSinger: inputSinger.value}, "*");
+                               inputSinger: inputSinger.value,
+                               type: "CreateChannel"}, "*");
   };
 });
 

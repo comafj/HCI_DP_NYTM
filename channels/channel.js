@@ -13,7 +13,13 @@ $( document ).ready(function() {
   var videoBtn = document.getElementById("VideoCommentInputBtn");
   videoBtn.onclick = function(){
     insertVideoComment();
-  };  
+  };
+  var url = new URL(window.location.href);
+  var title = url.searchParams.get("title");
+  var videocode = url.searchParams.get("videocode");
+  document.getElementById("ChannelTitle").innerHTML = title;
+  document.getElementById("DanceVideoFrame").src = `https://www.youtube.com/embed/${videocode}?mute=1&enablejsapi=1`;
+
 });
 
 function insertChat(){

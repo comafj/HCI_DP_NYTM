@@ -8,7 +8,7 @@ h1{
 }
 #container{
     display:flex;
-    width : 80%;
+    width : 95%;
     margin : 0 auto;
     padding:0 0 0 0;
     vertical-align: middle;
@@ -88,8 +88,8 @@ h1{
    display:flex;
     margin : 0 auto;
     height : 80%;
-    width : 80%;
-    border : solid 5px gray;
+    width : 95%;
+    border : solid 0px gray;
     border-radius: 15px;
     margin-bottom:10px;
 

@@ -3,15 +3,24 @@
 $( document ).ready(function() {
   var div = document.getElementsByClassName("Rsingle");
   div[0].onclick = function(){
-    var vID = 'SrVV73gTBpk';
-    location.href="https://www.youtube.com/watch?v=YjiVrcBsbDI";
+    var vID = 'YjiVrcBsbDI';
+    // location.href="https://www.youtube.com/watch?v=YjiVrcBsbDI";
+    window.parent.postMessage({type: "EnterChannel",
+    title: "Fall in love with this dance", 
+    videocode: vID}, "*");
   };
   div[1].onclick = function(){
-    var vID = 'EqW_It2aPH4';
-    location.href="https://www.youtube.com/watch?v=VkuEzN8IS_o";
+    var vID = 'VkuEzN8IS_o';
+    // location.href="https://www.youtube.com/watch?v=VkuEzN8IS_o";
+    window.parent.postMessage({type: "EnterChannel",
+    title: "PERFECT dance ON", 
+    videocode: vID}, "*");
   };
   div[2].onclick = function(){
-    var vID = 'd9HdIy0MM0U';
-    location.href="https://www.youtube.com/watch?v=YwtL6zS3wAY";
+    var vID = 'YwtL6zS3wAY';
+    // location.href="https://www.youtube.com/watch?v=YwtL6zS3wAY";
+    window.parent.postMessage({type: "EnterChannel",
+    title: "FAKE LOVE dance practice", 
+    videocode: vID}, "*");
   };
 });

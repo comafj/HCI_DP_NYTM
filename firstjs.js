@@ -55,7 +55,24 @@ $( document ).ready(function() {
   createBtn.onclick = function(){
     var Rcontent = document.getElementById("RContentFrame");
     Rcontent.src = "./create_channel.html";
-  };  
+  };
+
+  var MyPreviewBtn = document.getElementById("MyChannelCarousel");
+  MyPreviewBtn.onclick = function(){
+    var currentIndex = $('#MyChannelPreviewCarousel div.active').index();
+    window.parent.postMessage({type: "EnterChannel",
+    title: user_info['admin']['MyChannel'][currentIndex]['title'], 
+    videocode: user_info['admin']['MyChannel'][currentIndex]['videocode']}, "*");
+  };
+
+  var JoinedPreviewBtn = document.getElementById("JoinedChannelCarousel");
+  JoinedPreviewBtn.onclick = function(){
+    var currentIndex = $('#JoinedChannelPreviewCarousel div.active').index();
+    window.parent.postMessage({type: "EnterChannel",
+    title: user_info['admin']['JoinedChannel'][currentIndex]['title'], 
+    videocode: user_info['admin']['JoinedChannel'][currentIndex]['videocode']}, "*");
+  };
+
   var logoBtn = document.getElementById("logo");
   logoBtn.onclick = function(){
     var Rcontent = document.getElementById("RContentFrame");
@@ -64,21 +81,21 @@ $( document ).ready(function() {
     InputQuery.value = "";
   };  
   window.addEventListener('message', function(e) {
-    if(message='Channel1'){
-      location.href="channels/channel.html";
+    if(e.data['type']=='EnterChannel'){
+      location.href=`channels/channel.html?title=${e.data['title']}&videocode=${e.data['videocode']}`;
       return;
     }
-
-    console.log(e.data);
-    var uid = e.data['inputLink'].split("=").slice(-1)[0];
-    var url = "https://img.youtube.com/vi/".concat(uid).concat("/0.jpg");
-    e.data['url'] = url;
-    var new_channel = JSON.parse(JSON.stringify(e.data));
-    user_info['admin']['MyChannel'].unshift(new_channel);
-    showMyChannelPreview();
-    var Rcontent = document.getElementById("RContentFrame");
-    Rcontent.src = "./recommended_channel.html";
-    console.log("AAA");
+    else{
+      var uid = e.data['inputLink'].split("=").slice(-1)[0];
+      var url = "https://img.youtube.com/vi/".concat(uid).concat("/0.jpg");
+      e.data['url'] = url;
+      e.data['videocode'] = uid;
+      var new_channel = JSON.parse(JSON.stringify(e.data));
+      user_info['admin']['MyChannel'].unshift(new_channel);
+      showMyChannelPreview();
+      var Rcontent = document.getElementById("RContentFrame");
+      Rcontent.src = "./recommended_channel.html";
+    }
   });
   var loginBtn = document.getElementById("LoginBtn");
   LoginBtn.onclick = function(){
@@ -169,10 +186,20 @@ function showMyChannelPreview() {
     }
     var img = document.createElement("img");
     img.className = "d-block w-100";
-    img.src = user_info['admin']['MyChannel'][i]['url'];
+    img.style = "width: 25vw; height: 20vh;";
+    img.src = "https://img.youtube.com/vi/".concat(user_info['admin']['MyChannel'][i]['videocode']).concat("/0.jpg");
     node.appendChild(img);
     carousel.appendChild(node);
-  }  
+  } 
+  
+  var MyPreviewBtn = document.getElementById("MyChannelCarousel");
+  MyPreviewBtn.onclick = function(){
+    var currentIndex = $('#MyChannelPreviewCarousel div.active').index();
+    window.parent.postMessage({type: "EnterChannel",
+    title: user_info['admin']['MyChannel'][currentIndex]['title'], 
+    videocode: user_info['admin']['MyChannel'][currentIndex]['videocode']}, "*");
+  };
+
 }
 
 $('#MyChannelPreviewLeftBtn').on('click', function () {
@@ -207,10 +234,20 @@ function showJoinedChannelPreview() {
     }
     var img = document.createElement("img");
     img.className = "img-fluid";
-    img.src = user_info['admin']['JoinedChannel'][i]['url'];
+    img.style = "width: 25vw; height: 20vh;";
+    // img.className = "d-block w-100"
+    img.src = "https://img.youtube.com/vi/".concat(user_info['admin']['JoinedChannel'][i]['videocode']).concat("/0.jpg");
     node.appendChild(img);
     carousel.appendChild(node);
   }
+
+  var JoinedPreviewBtn = document.getElementById("JoinedChannelCarousel");
+  JoinedPreviewBtn.onclick = function(){
+    var currentIndex = $('#JoinedChannelPreviewCarousel div.active').index();
+    window.parent.postMessage({type: "EnterChannel",
+    title: user_info['admin']['JoinedChannel'][currentIndex]['title'], 
+    videocode: user_info['admin']['JoinedChannel'][currentIndex]['videocode']}, "*");
+  };
 }
 
 $('#JoinedChannelPreviewLeftBtn').on('click', function () {

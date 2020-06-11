@@ -85,6 +85,10 @@ $( document ).ready(function() {
       location.href=`channels/channel.html?title=${e.data['title']}&videocode=${e.data['videocode']}`;
       return;
     }
+    if(e.data['type']=='EnterLiveChannel'){
+      location.href=`channels/livechannel.html?title=${e.data['title']}&videocode=${e.data['videocode']}`;
+      return;
+    }
     else{
       var uid = e.data['inputLink'].split("=").slice(-1)[0];
       var url = "https://img.youtube.com/vi/".concat(uid).concat("/0.jpg");

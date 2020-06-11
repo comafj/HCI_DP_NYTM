@@ -4,21 +4,18 @@ $( document ).ready(function() {
   var div = document.getElementsByClassName("Rsingle");
   div[0].onclick = function(){
     var vID = 'SrVV73gTBpk';
-    // location.href="https://www.youtube.com/watch?v=SrVV73gTBpk";
     window.parent.postMessage({type: "EnterChannel",
     title: "Fun dance with Dance Monkey!", 
     videocode: vID}, "*");
   };
   div[1].onclick = function(){
     var vID = 'TXYST-k0p_0';
-    // location.href="https://www.youtube.com/watch?v=TXYST-k0p_0";
-    window.parent.postMessage({type: "EnterChannel",
+    window.parent.postMessage({type: "EnterLiveChannel",
     title: "I like these guys song", 
     videocode: vID}, "*");
   };
   div[2].onclick = function(){
     var vID = 'ElGCb7o41tU';
-    // location.href="https://www.youtube.com/watch?v=ElGCb7o41tU";
     window.parent.postMessage({type: "EnterChannel",
     title: "I wanna be a DOLPHIN", 
     videocode: vID}, "*");

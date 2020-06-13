@@ -4,24 +4,28 @@ var user_info={
       {
         "url" : "https://img.youtube.com/vi/SrVV73gTBpk/0.jpg",
         "videocode" : "SrVV73gTBpk",
-        "title": "Fun dance with Dance Monkey!"
+        "title": "Fun dance with Dance Monkey!",
+        "action" : "EnterLiveChannel"
       },
       {
         "url" : "https://img.youtube.com/vi/EqW_It2aPH4/0.jpg",
         "videocode" : "EqW_It2aPH4",
-        "title" : "Do COMAFJ know this amazing song?"
+        "title" : "Do COMAFJ know this amazing song?",
+        "action" : "EnterChannel"
       }
     ],
     "JoinedChannel" : [
       {
         "url" : "https://img.youtube.com/vi/SrVV73gTBpk/0.jpg",
         "videocode" : "TXYST-k0p_0",
-        "title": "I like these guys song"
+        "title": "I like these guys song",
+        "action" : "EnterLiveChannel"
       },
       {
         "url" : "https://img.youtube.com/vi/EqW_It2aPH4/0.jpg",
         "videocode" : 'ElGCb7o41tU',
-        "title": "I wanna be a DOLPHIN"
+        "title": "I wanna be a DOLPHIN",
+        "action" : "EnterChannel"
       }
     ]
   }

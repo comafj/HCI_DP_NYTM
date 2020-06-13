@@ -60,7 +60,7 @@ $( document ).ready(function() {
   var MyPreviewBtn = document.getElementById("MyChannelCarousel");
   MyPreviewBtn.onclick = function(){
     var currentIndex = $('#MyChannelPreviewCarousel div.active').index();
-    window.parent.postMessage({type: "EnterChannel",
+    window.parent.postMessage({type: user_info['admin']['JoinedChannel'][currentIndex]['action'],
     title: user_info['admin']['MyChannel'][currentIndex]['title'], 
     videocode: user_info['admin']['MyChannel'][currentIndex]['videocode']}, "*");
   };
@@ -68,7 +68,7 @@ $( document ).ready(function() {
   var JoinedPreviewBtn = document.getElementById("JoinedChannelCarousel");
   JoinedPreviewBtn.onclick = function(){
     var currentIndex = $('#JoinedChannelPreviewCarousel div.active').index();
-    window.parent.postMessage({type: "EnterChannel",
+    window.parent.postMessage({type: user_info['admin']['JoinedChannel'][currentIndex]['action'],
     title: user_info['admin']['JoinedChannel'][currentIndex]['title'], 
     videocode: user_info['admin']['JoinedChannel'][currentIndex]['videocode']}, "*");
   };

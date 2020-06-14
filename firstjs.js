@@ -60,7 +60,8 @@ $( document ).ready(function() {
   var MyPreviewBtn = document.getElementById("MyChannelCarousel");
   MyPreviewBtn.onclick = function(){
     var currentIndex = $('#MyChannelPreviewCarousel div.active').index();
-    window.parent.postMessage({type: user_info['admin']['JoinedChannel'][currentIndex]['action'],
+    console.log(currentIndex);
+    window.parent.postMessage({type: user_info['admin']['MyChannel'][currentIndex]['action'],
     title: user_info['admin']['MyChannel'][currentIndex]['title'], 
     videocode: user_info['admin']['MyChannel'][currentIndex]['videocode']}, "*");
   };
@@ -81,6 +82,7 @@ $( document ).ready(function() {
     InputQuery.value = "";
   };  
   window.addEventListener('message', function(e) {
+    console.log(e.data);
     if(e.data['type']=='EnterChannel'){
       location.href=`channels/channel.html?title=${e.data['title']}&videocode=${e.data['videocode']}`;
       return;
@@ -199,7 +201,7 @@ function showMyChannelPreview() {
   var MyPreviewBtn = document.getElementById("MyChannelCarousel");
   MyPreviewBtn.onclick = function(){
     var currentIndex = $('#MyChannelPreviewCarousel div.active').index();
-    window.parent.postMessage({type: "EnterChannel",
+    window.parent.postMessage({type: user_info['admin']['MyChannel'][currentIndex]['action'],
     title: user_info['admin']['MyChannel'][currentIndex]['title'], 
     videocode: user_info['admin']['MyChannel'][currentIndex]['videocode']}, "*");
   };
@@ -248,7 +250,7 @@ function showJoinedChannelPreview() {
   var JoinedPreviewBtn = document.getElementById("JoinedChannelCarousel");
   JoinedPreviewBtn.onclick = function(){
     var currentIndex = $('#JoinedChannelPreviewCarousel div.active').index();
-    window.parent.postMessage({type: "EnterChannel",
+    window.parent.postMessage({type: user_info['admin']['JoinedChannel'][currentIndex]['action'],
     title: user_info['admin']['JoinedChannel'][currentIndex]['title'], 
     videocode: user_info['admin']['JoinedChannel'][currentIndex]['videocode']}, "*");
   };

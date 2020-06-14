@@ -11,7 +11,7 @@ $( document ).ready(function() {
     var inputLink = document.getElementById("inputLink");
     var inputSong = document.getElementById("inputSong");
     var inputSinger = document.getElementById("inputSinger");
-    // if($('input[name=Live]:checked').val() )
+    console.log($('input[name=Live]:checked').val());
     window.parent.postMessage({action: $('input[name=Live]:checked').val(),
                                Live: $('input[name=Live]:checked').val(),
                                Private: $('input[name=Private]:checked').val(),

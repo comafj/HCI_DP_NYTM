@@ -22,6 +22,18 @@ $( document ).ready(function() {
                                inputSinger: inputSinger.value,
                                type: "CreateChannel"}, "*");
   };
+
+  var LiveOptionBtn = document.getElementById("LiveOptionBtn");
+  LiveOptionBtn.onclick = function(){
+    var LiveOptionHelpBlock = document.getElementById("LiveOptionHelpBlock");
+    LiveOptionHelpBlock.innerHTML = "In LIVE Channel, you can see other's cam and chat with them in real-time.";
+  }
+
+  var NonliveOptionBtn = document.getElementById("NonliveOptionBtn");
+  NonliveOptionBtn.onclick = function(){
+    var NonliveOptionHelpBlock = document.getElementById("LiveOptionHelpBlock");
+    NonliveOptionHelpBlock.innerHTML = "In NON-LIVE Channel, you can't interact in real-time, but you can see other's video comments and chat with them in non real-time.";
+  }
 });
 
 (function() {

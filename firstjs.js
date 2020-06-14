@@ -108,6 +108,9 @@ $( document ).ready(function() {
       return;
     }
     else{
+      if(e.data['title'] == "" || e.data['inputLink'] == "" || e.data['inputSong'] == "" || e.data['inputSinger'] == ""){
+        return;
+      }
       var uid = link2videocode(e.data['inputLink']);
       var url = "https://img.youtube.com/vi/".concat(uid).concat("/0.jpg");
       e.data['url'] = url;
@@ -115,8 +118,12 @@ $( document ).ready(function() {
       var new_channel = JSON.parse(JSON.stringify(e.data));
       user_info['admin']['MyChannel'].unshift(new_channel);
       showMyChannelPreview();
-      var Rcontent = document.getElementById("RContentFrame");
-      Rcontent.src = "./recommended_channel.html";
+      // var Rcontent = document.getElementById("RContentFrame");
+      // Rcontent.src = "./recommended_channel.html";
+
+      window.parent.postMessage({type: user_info['admin']['MyChannel'][0]['action'],
+      title: user_info['admin']['MyChannel'][0]['title'], 
+      videocode: user_info['admin']['MyChannel'][0]['videocode']}, "*");
     }
   });
   var loginBtn = document.getElementById("LoginBtn");

@@ -1,3 +1,18 @@
+function link2videocode(url){
+    if(url.includes("youtube.com")){
+      var url = new URL(url);
+      var videocode = url.searchParams.get("v");
+      return videocode;
+    }
+    else if(url.includes("youtu.be")){
+      var videocode = url.split("/").slice(-1)[0];
+      return videocode;
+    }
+    else{
+      return "";
+    }
+  }
+
 var firebaseConfig = {
     apiKey: "AIzaSyD3YaHKlMJT4iFIWtvVYrgjYk0ttJWdPdk",
     authDomain: "cs374-fp-community.firebaseapp.com",
@@ -52,9 +67,11 @@ function addRow(title, tag, comment, key) {
     var comments = comment.replace(/\n/g, '<br>');
     commentCell.className = 'comment';
     if (tag != '') {
-        var tags = tag.replace('www', 'img');
-        tags = tags.replace('watch?v=', 'vi/');
-        tags = tags + '/0.jpg';
+        console.log(tag);
+        // var tags = tag.replace('www', 'img');
+        // tags = tags.replace('watch?v=', 'vi/');
+        // tags = tags + '/0.jpg';
+        var tags = "https://img.youtube.com/vi/".concat(link2videocode(tag)).concat("/0.jpg");
         commentCell.innerHTML = '<b><big># ' + title + '</big></b><br><br><a href="' + tag + '">' + tag + '</a><br><img src="' + tags + '"><br><br>' + comments;
     }
     else {

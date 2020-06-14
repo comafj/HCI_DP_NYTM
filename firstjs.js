@@ -1,6 +1,22 @@
 // This allows the Javascript code inside this block to only run when the page
 // has finished loading in the browser.
 var username = "admin"
+
+function link2videocode(url){
+  if(url.includes("youtube.com")){
+    var url = new URL(url);
+    var videocode = url.searchParams.get("v");
+    return videocode;
+  }
+  else if(url.includes("youtu.be")){
+    var videocode = url.split("/").slice(-1)[0];
+    return videocode;
+  }
+  else{
+    return "";
+  }
+}
+
 $( document ).ready(function() {
   var btn = document.getElementById("CBTN");
   btn.onclick = function(){
@@ -92,7 +108,7 @@ $( document ).ready(function() {
       return;
     }
     else{
-      var uid = e.data['inputLink'].split("=").slice(-1)[0];
+      var uid = link2videocode(e.data['inputLink']);
       var url = "https://img.youtube.com/vi/".concat(uid).concat("/0.jpg");
       e.data['url'] = url;
       e.data['videocode'] = uid;

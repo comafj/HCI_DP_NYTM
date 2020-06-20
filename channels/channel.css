@@ -50,6 +50,11 @@ h1{
     font-size: 1.5em;
     padding: 2px 2px 2px 2px;
 }
+#like{
+    float:right;
+    margin-left: 2em;
+    color: red;
+}
 #contents{
    display:flex;
     margin : 0 auto;
@@ -115,7 +120,7 @@ h1{
     float: left;
     width : 80%;
     text-align: left;
-    word-break: break-all;
+    word-break: break-word;
     border : solid 0px;
     border-radius: 8px;
     height: auto;
@@ -130,7 +135,7 @@ h1{
     float: right;
     width : 80%;
     text-align: left;
-    word-break: break-all;
+    word-break: break-word;
     border : solid 0px;
     border-radius: 8px;
     height: auto;
@@ -204,7 +209,7 @@ h1{
     border : solid 0px;
     border-radius: 8px;
     background-color:  white;
-    width: 50%;
+    width: 60%;
     bottom: 10%;
     margin : 0px auto;
     height: 100%;
@@ -212,7 +217,7 @@ h1{
 #VideoCommentVideo{
     display: inline-block;
     border : solid 0px gray;
-    width: 65%;
+    width: 55%;
     margin : 0px auto;
     height: 100%;
 }
@@ -221,9 +226,9 @@ h1{
     vertical-align: top;
 
     margin : 0 auto;
-    padding: 5px 5px 5px 5px;
-    width: 30%;
-    max-width: 30%;
+    padding: 5px 3px 5px 3px;
+    width: 42%;
+    max-width: 42%;
     height: 100%;
     text-align: left;
     word-break: break-word;
@@ -244,7 +249,19 @@ h1{
     margin-bottom: 10px;
     bottom: 10%;
     margin : 4px;
-    padding: 4px;
+    padding: 0px;
     height: 27.5%;
     width: 27%;
+}
+#VideoCommentMin{
+    width:10%;
+}
+#VideoCommentSec{
+    width:10%;
+}
+.close{
+    color:white;
+}
+.videoclose{
+    color:black;
 }

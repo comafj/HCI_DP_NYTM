@@ -50,6 +50,11 @@ h1{
     font-size: 1.5em;
     padding: 2px 2px 2px 2px;
 }
+#like{
+    float:right;
+    margin-left: 2em;
+    color: red;
+}
 #contents{
    display:flex;
     margin : 0 auto;
@@ -193,7 +198,7 @@ h1{
     margin : 4px;
     padding: 4px;
     height: 27.5%;
-    //width: 70%;
+    /* //width: 70%; */
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;

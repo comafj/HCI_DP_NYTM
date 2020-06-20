@@ -100,6 +100,7 @@ function bindEvent() {
 
 function like(key) {
     var keys = document.getElementById(key);
+    console.log(keys);
     var user;
     var title;
     var tag;
@@ -148,14 +149,5 @@ function numLike(key) {
     return numLike;
 }
 
-
 bindEvent();
 read();
-
-var username;
-var url = new URL(window.location.href);
-if (url.searchParams.get('username')) {
-  username = url.searchParams.get('username');
-}
-
-console.log(username);

@@ -128,7 +128,7 @@ function like(key) {
         comment: comment,
         like: numLike + 1
     });
-
+    keys.disabled = true;
 }
 
 function numLike(key) {

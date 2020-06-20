@@ -128,7 +128,9 @@ function like(key) {
         comment: comment,
         like: numLike + 1
     });
-    keys.disabled = true;
+    keys.onclick = function() {
+        keys.disabled = true;
+    }
 }
 
 function numLike(key) {
@@ -148,14 +150,5 @@ function numLike(key) {
     return numLike;
 }
 
-
 bindEvent();
 read();
-
-var username;
-var url = new URL(window.location.href);
-if (url.searchParams.get('username')) {
-  username = url.searchParams.get('username');
-}
-
-console.log(username);

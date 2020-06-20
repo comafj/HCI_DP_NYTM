@@ -145,3 +145,5 @@ var url = new URL(window.location.href);
 if (url.searchParams.get('username')) {
   username = url.searchParams.get('username');
 }
+
+console.log(username);

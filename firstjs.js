@@ -96,7 +96,7 @@ $( document ).ready(function() {
   communityBtn.onclick = function(){
     // location.href="community.html";
     var Rcontent = document.getElementById("RContentFrame");
-    Rcontent.src = "community.html";
+    Rcontent.src = `community.html?username=${username}`;
   };  
   var createBtn = document.getElementById("MyChannelPreviewCreateBtn");
   createBtn.onclick = function(){

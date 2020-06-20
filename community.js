@@ -100,7 +100,6 @@ function bindEvent() {
 
 function like(key) {
     var keys = document.getElementById(key);
-    console.log(keys);
     var user;
     var title;
     var tag;
@@ -129,7 +128,9 @@ function like(key) {
         comment: comment,
         like: numLike + 1
     });
-    keys.disabled = true;
+    keys.onclick = function() {
+        keys.disabled = true;
+    }
 }
 
 function numLike(key) {

@@ -9,6 +9,12 @@ var firebaseConfig = {
     measurementId: "G-ZXXL7QQ2Z4"
 };
 
+var username;
+var url = new URL(window.location.href);
+if (url.searchParams.get('username')) {
+    username = url.searchParams.get('username');
+}
+
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
@@ -74,11 +80,6 @@ function bindEvent() {
     var comment = document.getElementById('comment');
     var post = document.getElementById('post');
     var like = document.getElementById('like');
-    var username;
-    var url = new URL(window.location.href);
-    if (url.searchParams.get('username')) {
-        username = url.searchParams.get('username');
-    }
     title.value = '';
     tag.value = '';
     comment.value = '';

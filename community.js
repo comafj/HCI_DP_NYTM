@@ -84,6 +84,9 @@ function bindEvent() {
     tag.value = '';
     comment.value = '';
     title.focus();
+    if (username == admin) {
+        post.disabled = true;
+    }
     post.onclick = function() {
         var titleValue = title.value;
         var tagValue = tag.value;
@@ -99,7 +102,6 @@ function bindEvent() {
 }
 
 function like(key) {
-    var keys = document.getElementById(key);
     var user;
     var title;
     var tag;
@@ -128,9 +130,6 @@ function like(key) {
         comment: comment,
         like: numLike + 1
     });
-    keys.onclick = function() {
-        keys.disabled = true;
-    }
 }
 
 function numLike(key) {

@@ -84,9 +84,6 @@ function bindEvent() {
     tag.value = '';
     comment.value = '';
     title.focus();
-    if (username == admin) {
-        post.disabled = true;
-    }
     post.onclick = function() {
         var titleValue = title.value;
         var tagValue = tag.value;

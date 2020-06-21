@@ -158,6 +158,9 @@ $( document ).ready(function() {
       videocode:  e.data['videocode']}, "*");
     }
   }); 
+
+  showMyChannelPreview();
+  showJoinedChannelPreview();
 });
 
 function login(username){
@@ -253,6 +256,7 @@ async function showJoinedChannelPreview() {
   // preview.src = channelList[0]['url'];
   // preview.value = 0;
   joinedChannels = [];
+  console.log(username);
   var snapshot = await firebase.database().ref(`/${username}/JoinedChannel/`).orderByKey().once("value");
   if(snapshot.exists()){
     snapshot.forEach(function(childSnapshot) {
@@ -261,6 +265,8 @@ async function showJoinedChannelPreview() {
         joinedChannels.push(d);
     });
   }
+  console.log(username);
+  console.log(joinedChannels);
 
   var carousel = document.getElementById("JoinedChannelCarousel");
   carousel.innerHTML = '';
@@ -307,5 +313,5 @@ $('#JoinedChannelPreviewRightBtn').on('click', function () {
   preview.src = channelList[preview.value]['url'];
 })
 
-showMyChannelPreview();
-showJoinedChannelPreview();
+// showMyChannelPreview();
+// showJoinedChannelPreview();

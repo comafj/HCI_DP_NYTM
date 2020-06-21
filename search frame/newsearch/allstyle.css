@@ -90,3 +90,12 @@ h1{
   margin-top:5px;
   font-size:17px;
 }
+.on_image{
+  position:relative;
+  top:10px;
+  left:190px;
+}
+.liveimage{
+  height : 45px;
+  width : 60px;
+}
